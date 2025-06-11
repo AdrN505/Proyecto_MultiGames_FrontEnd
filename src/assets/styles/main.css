@@ -1,0 +1,135 @@
+/* assets/styles/main.css */
+.main-container {
+  background-color: #D2D795;
+  min-height: 100vh;
+  padding: 20px;
+  padding-top: 130px;
+}
+
+.games-container {
+  background-color: #49367C;
+  border: 4px solid #5829D9;
+  border-radius: 10px;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.games-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+  padding: 0 10px;
+}
+
+.main-container {
+  background-color: #D2D795;
+  min-height: 100vh;
+  padding: 20px;
+  padding-top: 130px;
+}
+
+.games-container {
+  background-color: #49367C;
+  border: 4px solid #5829D9;
+  border-radius: 10px;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+/* Estilos responsivos para ajustar el espacio en dispositivos móviles */
+@media (max-width: 600px) {
+  .main-container {
+    padding-top: 150px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+  
+  .games-container {
+    padding: 10px 0;
+    border-width: 2px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    min-height: 85vh;
+  }
+}
+
+/* Estilos para el título de categoría (ahora directamente en App.vue) */
+.titulo {
+  display: inline-block;
+  padding: 5px 15px;
+  border: dashed;
+  border-bottom: none;
+  border-color: #8C72D3;
+  border-radius: 24px !important;
+  font-size: 0.95rem;
+  margin-left: 10px;
+  text-align: left;
+}
+
+.titulo-mobile {
+  display: inline-block;
+  padding: 3px 10px;
+  border: dashed;
+  border-bottom: none;
+  border-color: #8C72D3;
+  border-radius: 16px !important;
+  font-size: 0.85rem;
+  margin-left: 5px;
+  text-align: left;
+  max-width: 90%;
+}
+
+.linea-decorativa {
+  border-style: dashed;
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .titulo, .titulo-mobile {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    margin-left: 3px;
+  }
+  
+  .text-h6, .text-subtitle-1 {
+    font-size: 0.9rem !important;
+  }
+}
+
+.custom-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.game-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .custom-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .custom-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .custom-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

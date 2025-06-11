@@ -1,0 +1,665 @@
+/* Estilos para el juego del Ahorcado*/
+
+.ahorcado-wrapper {
+  min-height: 100vh;
+  background-color: #5c3b8e;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #b5c832;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn {
+  background-color: #E63737 !important;
+  color: white !important;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.game-name {
+  margin: 0;
+  font-size: 24px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #6642b3;
+  border-radius: 12px;
+  overflow: hidden;
+  flex: 1;
+  max-height: calc(100vh - 100px);
+}
+
+.game-header {
+  background-color: #5733b3;
+  color: white;
+  font-size: 20px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.game-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+  background-color: #6642b3;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.control-btn {
+  background-color: #5124ab !important;
+  text-transform: uppercase;
+}
+
+.category-display {
+  background-color: #7a57c1;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+}
+
+.attempts-display {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  background-color: rgba(230, 55, 55, 0.2);
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: white;
+}
+
+.score-display {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  background-color: rgba(243, 254, 99, 0.2);
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: white;
+}
+
+.timer-display {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  background-color: rgba(243, 254, 99, 0.2);
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: white;
+}
+
+.game-play-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  overflow: auto;
+  outline: none;
+}
+
+.hangman-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.word-display-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.word-display {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.keyboard-hint {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.letter-card {
+  width: 40px;
+  height: 50px;
+  background-color: #5733b3;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.keyboard-container {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.letter-btn {
+  min-width: 40px !important;
+  height: 40px !important;
+  border-radius: 6px !important;
+  color: #6642b3 !important;
+  font-weight: bold !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.letter-btn:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3) !important;
+}
+
+.letter-btn.v-btn--disabled {
+  opacity: 0.7;
+}
+
+/* Diálogos */
+.dialog-card {
+  background-color: #6642b3 !important;
+  color: white !important;
+  border-radius: 12px !important;
+}
+
+.dialog-title {
+  background-color: #5733b3;
+  color: white;
+  padding: 16px !important;
+  border-radius: 12px 12px 0 0;
+}
+
+.category-options {
+  padding: 16px 0;
+}
+
+/* Estilos para detalles de puntuación */
+.score-info {
+  margin-top: 10px;
+}
+
+.score-details {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.score-row:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.total-score {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #F3FE63;
+}
+
+/* Estadísticas del jugador */
+.player-stats-container {
+  margin-top: 24px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.stats-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #F3FE63;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+/* Alineación de botones en diálogos */
+.dialog-actions {
+  justify-content: center;
+  padding: 16px;
+}
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+  .ahorcado-wrapper {
+    padding: 12px;
+  }
+  
+  .header-bar {
+    margin-bottom: 16px;
+  }
+  
+  .game-container {
+    max-height: calc(100vh - 80px);
+  }
+  
+  .game-play-area {
+    padding: 16px;
+  }
+}
+
+/* Pantallas móviles grandes */
+@media (max-width: 768px) {
+  .ahorcado-wrapper {
+    padding: 8px;
+  }
+  
+  .header-bar {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+  }
+  
+  .game-name {
+    font-size: 20px;
+  }
+  
+  .game-container {
+    max-height: calc(100vh - 60px);
+  }
+  
+  .game-header {
+    font-size: 18px;
+    padding: 10px 16px;
+  }
+  
+  /* Controles más compactos */
+  .game-controls {
+    padding: 8px 12px;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .category-display, .attempts-display, .score-display, .timer-display {
+    padding: 6px 10px;
+    font-size: 14px;
+    flex: 1;
+    min-width: 70px;
+    text-align: center;
+  }
+  
+  .control-btn {
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+    order: -1; 
+    width: 100%;
+    margin-bottom: 4px;
+  }
+  
+  /* Área de juego optimizada */
+  .game-play-area {
+    padding: 12px;
+    gap: 12px;
+  }
+  
+  /* Ahorcado más compacto */
+  .hangman-container {
+    margin-bottom: 16px;
+    padding: 12px;
+  }
+  
+  .hangman-container svg {
+    width: 160px;
+    height: 200px;
+  }
+  
+  /* Palabra más pequeña */
+  .word-display-container {
+    margin-bottom: 16px;
+  }
+  
+  .letter-card {
+    width: 32px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  /* Teclado más compacto */
+  .keyboard-hint {
+    display: none; 
+  }
+  
+  .letter-btn {
+    min-width: 35px !important;
+    height: 35px !important;
+    margin: 2px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 600px) {
+  .ahorcado-wrapper {
+    padding: 4px;
+  }
+  
+  .header-bar {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .game-name {
+    font-size: 18px;
+  }
+  
+  .game-container {
+    max-height: calc(100vh - 50px);
+  }
+  
+  .game-header {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+  
+  /* Controles ultra compactos en dos filas */
+  .game-controls {
+    padding: 6px 8px;
+    gap: 4px;
+    flex-direction: column;
+  }
+  
+  .control-btn {
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+    width: 100%;
+    margin-bottom: 4px;
+  }
+  
+  /* Indicadores en una fila compacta */
+  .game-controls .category-display,
+  .game-controls .attempts-display,
+  .game-controls .score-display,
+  .game-controls .timer-display {
+    display: inline-flex;
+    padding: 4px 6px;
+    font-size: 12px;
+    border-radius: 4px;
+    min-width: 55px;
+    margin: 2px;
+  }
+  
+  /* Crear una fila para los indicadores */
+  .game-controls {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  
+  .control-btn {
+    grid-column: 1;
+    order: 1;
+  }
+  
+  /* Los indicadores en una segunda fila */
+  .category-display,
+  .attempts-display,
+  .score-display,
+  .timer-display {
+    grid-column: 1;
+    order: 2;
+    justify-self: center;
+    width: auto;
+    display: inline-flex;
+  }
+  
+  /* Contenedor para los indicadores */
+  .game-controls::after {
+    content: '';
+    grid-column: 1;
+    order: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    margin-top: 4px;
+  }
+  
+  /* Área de juego más compacta */
+  .game-play-area {
+    padding: 8px;
+  }
+  
+  /* Ahorcado aún más pequeño */
+  .hangman-container {
+    margin-bottom: 12px;
+    padding: 8px;
+  }
+  
+  .hangman-container svg {
+    width: 140px;
+    height: 180px;
+  }
+  
+  /* Letras de la palabra más pequeñas */
+  .letter-card {
+    width: 28px;
+    height: 36px;
+    font-size: 18px;
+  }
+  
+  /* Teclado más pequeño */
+  .letter-btn {
+    min-width: 32px !important;
+    height: 32px !important;
+    margin: 1px !important;
+    font-size: 12px !important;
+  }
+  
+  .keyboard {
+    max-width: 100%;
+    gap: 2px;
+  }
+}
+
+/* Móviles extra pequeños */
+@media (max-width: 400px) {
+  .ahorcado-wrapper {
+    padding: 2px;
+  }
+  
+  .header-bar {
+    padding: 6px;
+    margin-bottom: 6px;
+  }
+  
+  .game-name {
+    font-size: 16px;
+  }
+  
+  .game-container {
+    max-height: calc(100vh - 40px);
+  }
+  
+  .game-header {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+  
+  /* Controles en líneas muy compactas */
+  .game-controls {
+    padding: 4px 6px;
+    gap: 3px;
+  }
+  
+  .control-btn {
+    padding: 3px 6px !important;
+    font-size: 11px !important;
+  }
+  
+  .category-display,
+  .attempts-display,
+  .score-display,
+  .timer-display {
+    padding: 3px 4px;
+    font-size: 10px;
+    min-width: 45px;
+  }
+  
+  /* Área de juego mínima */
+  .game-play-area {
+    padding: 6px;
+  }
+  
+  /* Ahorcado mínimo */
+  .hangman-container {
+    margin-bottom: 10px;
+    padding: 6px;
+  }
+  
+  .hangman-container svg {
+    width: 120px;
+    height: 160px;
+  }
+  
+  /* Letras mínimas */
+  .letter-card {
+    width: 24px;
+    height: 32px;
+    font-size: 16px;
+  }
+  
+  /* Teclado mínimo */
+  .letter-btn {
+    min-width: 28px !important;
+    height: 28px !important;
+    margin: 1px !important;
+    font-size: 11px !important;
+  }
+}
+
+/* Optimización específica para controles en móviles */
+@media (max-width: 600px) {
+  /* Reorganizar controles usando flexbox */
+  .game-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 6px 8px;
+    gap: 6px;
+  }
+  
+  /* Botón nuevo juego primera fila */
+  .control-btn {
+    order: 1;
+    width: 100%;
+    margin-bottom: 4px;
+  }
+  
+  /* Indicadores en segunda fila */
+  .game-controls-row {
+    order: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  
+  .category-display,
+  .attempts-display,
+  .score-display,
+  .timer-display {
+    flex: 1;
+    min-width: 60px;
+    text-align: center;
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+}
+
+/* Orientación landscape en móviles */
+@media (max-width: 768px) and (orientation: landscape) {
+  .game-play-area {
+    flex-direction: row;
+    gap: 16px;
+  }
+  
+  .hangman-container {
+    flex: 1;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .keyboard-container {
+    flex: 1;
+    margin-top: 0;
+  }
+  
+  .word-display-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+  
+  .hangman-container svg {
+    width: 120px;
+    height: 150px;
+  }
+  
+  .letter-btn {
+    min-width: 30px !important;
+    height: 30px !important;
+  }
+}
